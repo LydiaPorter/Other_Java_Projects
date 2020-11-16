@@ -52,10 +52,24 @@ public class Debugging {
 		System.out.println("Grade average: " + avgGrade);
 		}
 		//can't divide by 0
-		
-		
-		
-		
+
+
+		/* Debugging
+		Code Review - read it out loud in the order it will execute!
+		errors can give you hints
+		reading out loud
+
+		Trace Statements - print to make sure variables and stuff works
+
+		Comments - explains logic; think through what you need and what should happen
+
+		Debugger - step by step that runs your code 
+		built into IDEs
+		helps you follow the flow of your program 
+		- run, continue (to next line), step over (skip), 
+		step into (brings us into a function), stop (program)
+
+		*/
 		
 			
 	}
