@@ -47,7 +47,7 @@ public class TempConverter
 		fahrenheitTemp = input.nextLine();
 		
 		// Convert the user's value from Fahrenheit to Celsius and output the result
-		celsiusTemp = FahrenheitToCelsius(temp);
+		celsiusTemp = FahrenheitToCelsius(fahrenheitTemp); //
 		System.out.println("The temperature in Celsius is: " + celsiusTemp);
 
 		// Print a blank line to the screen 
