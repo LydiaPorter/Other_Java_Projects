@@ -1,8 +1,13 @@
 package lydia.porter.school;
 
 import java.util.*;
+//import java.util.Scanner;
 
 public class Student {
+	Scanner input = new Scanner(System.in);
+	Scanner inputclass = new Scanner(System.in);
+	
+	static int totalStudents;
 	private String name;
 	private int ID;
 	private String bDay;
@@ -19,40 +24,53 @@ public class Student {
 	private void pickClasses() {
 		//String[] classList = new String[22]; //22 elements long; 22 classes to choose from
 		//classList[0] = "Math"; //long way to do it
-		String[] classList = new String[22];
-		String[] classList = {
-				"Math,"
-				"English,"
-				"History, "
-				"Science,"
-				"programming_Java,"
-				"programming_Python,"
-				"programming_C_Sharp,"
-				"Choir,"
-				"Health,"
-				"PE,"
-				"Foods,"
-				"Pro_Start,"
-				"Cosmo,"
-				"Internship,"
-				"Early_childhood_ed,"
-				"Business,"
-				"Seminary,"
-				"Auto,"
-				"Spanish,"
-				"French,"
-				"ASL,"
-				"Art,"
-		}
+		//String[] classList = new String[22];
+		String[] classList = { "Math",
+				"English",
+				"History",
+				"Science",
+				"programming_Java",
+				"programming_Python",
+				"programming_C_Sharp",
+				"Choir",
+				"Health",
+				"PE",
+				"Foods",
+				"Pro_Start",
+				"Cosmo",
+				"Internship",
+				"Early_childhood_ed",
+				"Business",
+				"Seminary",
+				"Auto",
+				"Spanish",
+				"French",
+				"ASL",
+				"Art"};
+	
 		for(int i = 0; i < 22; i++) {
 			System.out.println(classList[i]);
+		}
+		//Scanner inputclass = new String(System.in);////////
+		System.out.println("what class would you like for period 1?");
+		inputclass = input.nextLine();/////////
+		if (inputclass.equals("math")) {
+			classes[0] = Classes.Math;
+		}
+		else if (inputclass.equals("english")) {
+			classes[0] = Classes.English;
+		}
+		else {
+			classes[0] = Classes.programming_Java;
 		}
 		
 	}
 	
+	
 	//ALL
 	public Student(String name, int iD, String bDay, double gpa, String health, String address, int year, int lunchNum,
-			String phoneNum, String parents, String email) {
+			String phoneNum, String email) {
+		// String parents,
 		super();
 		this.name = name;
 		ID = iD;
@@ -65,6 +83,7 @@ public class Student {
 		this.phoneNum = phoneNum;
 	//	this.parents = parents;
 		this.email = email;
+		totalStudents++;
 	}
 
 	//old student
@@ -72,6 +91,7 @@ public class Student {
 		super();
 		this.gpa = gpa;
 		this.year = year;
+		totalStudents++;
 	}
 	
 	
@@ -86,6 +106,7 @@ public class Student {
 	private String genID() {
 		Random rand = new Random();
 		//8 digit 
+		totalStudents++;
 		int num1 = rand.nextInt(10);
 		String pos1 = Integer.toString(num1);
 		int num2 = rand.nextInt(10);
