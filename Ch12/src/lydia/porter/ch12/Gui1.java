@@ -10,6 +10,8 @@ public class Gui1 {
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
+		//unchanging, don't have to have a new instance of class to work
+		//main calls method; don't build in main 
 		//new instance of jframe class
 		//new frame object
 		FlowLayout flowlayout = new FlowLayout(); 
@@ -34,8 +36,7 @@ public class Gui1 {
 		JButton my_btn4 = new JButton("Don't click meeeeee!");
 		JButton my_btn5 = new JButton("Don't click meeeeee!");
 		
-		
-		
+
 		frame.add(my_label);
 		frame.add(my_btn);
 		frame.add(my_btn1);
@@ -47,9 +48,7 @@ public class Gui1 {
 		frame.setVisible(true);
 		frame.getContentPane().setBackground(Color.pink);
 		
-		
-		
-		
+			
 	}
 
 }
