@@ -1,6 +1,7 @@
 package lydia.porter.ch12;
 
 import javax.swing.*;
+import java.util.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; 
@@ -13,7 +14,7 @@ public class ButtonClick implements ActionListener {
 	
 	public ButtonClick() {
 		theFrame = new JFrame(); 
-		FlowLayout layout = new FlowLayout();
+		FlowLayout layout = new FlowLayout(); //always need a layout manager
 		theFrame.setLayout(layout); 
 		theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		theFrame.setSize(500, 500); 
@@ -27,18 +28,15 @@ public class ButtonClick implements ActionListener {
 		toClick_lbl = new JLabel();
 		toClick_lbl.setText("Click the button as fast as you can!");
 		
-		
-		
+				
 		theFrame.add(clicker_btn);
 		theFrame.add(toClick_lbl);
-		
 		
 		theFrame.setVisible(true);
 	}
 
 	public static void main(String[] args) {
 		new ButtonClick();
-		
 	}
 
 	@Override
@@ -50,7 +48,7 @@ public class ButtonClick implements ActionListener {
 			Font font = new Font(clicker_btn.getFont().getName(), clicker_btn.getFont().getStyle(), 20);
 			clicker_btn.setFont(font);
 		}
-		else if (num_Clicks > 20) {
+		else if (num_Clicks >= 20) {
 			Font font = new Font(clicker_btn.getFont().getName(), clicker_btn.getFont().getStyle(), 50);
 			clicker_btn.setFont(font);
 		}
@@ -63,18 +61,29 @@ public class ButtonClick implements ActionListener {
 			clicker_btn.setFont(font);
 		}
 		
+		//when you get to a certain number of clicks, change background color
 		if (num_Clicks > 20) {
 			theFrame.getContentPane().setBackground(Color.red);
 		}
 		else if (num_Clicks > 40) {
 			theFrame.getContentPane().setBackground(Color.GREEN);
-			
 		}
 		else if (num_Clicks > 60) {
 			theFrame.getContentPane().setBackground(Color.blue);
 		}
 		
+		//you get to 100 clicks, it needs to time stamp it
+		//WINNER
+		if (num_Clicks >= 100 ) {
+			theFrame.getContentPane().setBackground(Color.yellow);
+			JOptionPane.showMessageDialog(null, "You reached 100 clicks at "+Calendar.getInstance().getTime());
+		}
+		else if (num_Clicks >= 200) {
+			theFrame.getContentPane().setBackground(Color.orange);
+			JOptionPane.showMessageDialog(null, "You reached 100 clicks at "+Calendar.getInstance().getTime());
+		}
 		
+							
 	}
 
 }
