@@ -34,11 +34,11 @@ public class RaceTrack
 		// STUDENT should create three new RaceCar objects named
 		// car1, car2, and car3 below.  Use constructor parameters
 		// to give each car a unique name, maximum speed, and acceleration.
-		RaceCar car1 = 
-		RaceCar car2 = 
-		RaceCar car3 = 
+		RaceCar car1 = new RaceCar("Slow Bob",3.0,1.0);
+		RaceCar car2 = new RaceCar("Average Ted", 10.0, 5.0);
+		RaceCar car3 = new RaceCar("Zippy Fred", 20.0, 3.0);
 
-		// STUDENT does not need to modify anything below this line!
+		//////////////////////////////////////////////////////////////////////////////////// STUDENT does not need to modify anything below this line!
 		
 		// set the 3 finish line distances
 		double FINISH_LINE1 = 10;

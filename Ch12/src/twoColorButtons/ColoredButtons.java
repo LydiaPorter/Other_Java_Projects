@@ -5,12 +5,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 
 public class ColoredButtons implements ActionListener {
 		JFrame myFrame;
 		JButton redButton;
 		JButton greenButton;
-		FlowLayout myLayout;
+		//FlowLayout myLayout;
+		GridLayout myLayout;
 		JButton blueButton;
 		JButton pinkButton;
 		JButton magentaButton;
@@ -32,12 +34,7 @@ public class ColoredButtons implements ActionListener {
 	    // make sure program terminates when window is closed
 	    myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-	    // assign a layout
-	    myLayout = new FlowLayout();
-	    myFrame.setLayout(myLayout);
 	    
-	    welcome = new JLabel();
-	    welcome.setText("click a button, any button!");
 	    
 	     
 
@@ -46,7 +43,7 @@ public class ColoredButtons implements ActionListener {
 	    redButton.addActionListener(this);
 	    greenButton = new JButton("Green");
 	    greenButton.addActionListener(this); ///IMPORTANT
-	    blueButton = new JButton("Blue");
+	  /*  blueButton = new JButton("Blue");
 	    blueButton.addActionListener(this);
 	    pinkButton = new JButton("Pink");
 	    pinkButton.addActionListener(this);
@@ -55,22 +52,51 @@ public class ColoredButtons implements ActionListener {
 	    orangeBtn = new JButton("Orange");
 	    orangeBtn.addActionListener(this);
 	    cyanBtn= new JButton("Cyan");
-	    cyanBtn.addActionListener(this);
+	    cyanBtn.addActionListener(this);*/
 	  
-	    myFrame.add(welcome);
-	    myFrame.add(redButton);
-	    myFrame.add(greenButton);
-	    myFrame.add(blueButton);
-		myFrame.add(pinkButton);
-		myFrame.add(magentaButton);
-		myFrame.add(orangeBtn);
-		myFrame.add(cyanBtn);
+	  //  myFrame.add(welcome);
+	   // myFrame.add(redButton);
+	    //myFrame.add(new JLabel(""));
+	    //myFrame.add(new JLabel(""));
+	    //myFrame.add(new JLabel(""));
+	    //myFrame.add(new JLabel(""));
+	  //  myFrame.add(greenButton);/*
+	   // myFrame.add(blueButton);
+		//myFrame.add(pinkButton);
+		//myFrame.add(magentaButton);
+		//myFrame.add(orangeBtn);
+		//myFrame.add(cyanBtn);*/
+	    
+	    
+	    	// assign a layout
+		   // myLayout = new FlowLayout();
+		   // myFrame.setLayout(myLayout);
+		  // myLayout = new GridLayout(3,2);
+
+		   JPanel myPanel = (JPanel)myFrame.getContentPane();
+		   myPanel.setLayout(new BorderLayout(20,20));
+		   Border myBorder = BorderFactory.createLineBorder(Color.PINK, 4);
+		   myPanel.setBorder(myBorder);
+	 
+		   myPanel.add(redButton,BorderLayout.LINE_START);
+		   myPanel.add(greenButton,BorderLayout.LINE_END);
+		  //BoxLayout myLayout = new BoxLayout(myPanel, BoxLayout.Y_AXIS);
+		 /* redButton.setAlignmentY(Component.CENTER_ALIGNMENT);
+		   greenButton.setAlignmentY(Component.CENTER_ALIGNMENT);
+		   redButton.setAlignmentX(Component.LEFT_ALIGNMENT);
+		   greenButton.setAlignmentX(Component.LEFT_ALIGNMENT);*/
+		 
+		 // myFrame.setLayout(myLayout(5,10));
+		   
+		   
+		   
+		    welcome = new JLabel();
+		    welcome.setText(" ");
+		    
 
 	    // make the frame visible
 	    myFrame.setVisible(true);
 	    
-	    
-	     
 	}
 
 	public static void main(String[] args) {
@@ -87,7 +113,7 @@ public class ColoredButtons implements ActionListener {
 		else if (e.getSource().equals(this.greenButton)) {
 			System.out.println("you clicked the green button");
 			myFrame.getContentPane().setBackground(Color.GREEN);
-		}
+		}/*
 		else if (e.getSource().equals(this.blueButton)) {
 			myFrame.getContentPane().setBackground(Color.BLUE);
 		}
@@ -103,7 +129,7 @@ public class ColoredButtons implements ActionListener {
 		}
 		else if (e.getSource().equals(this.cyanBtn)) {
 			myFrame.getContentPane().setBackground(Color.CYAN);
-		}
+		}*/
 		
 	}
 
